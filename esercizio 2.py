@@ -1,3 +1,5 @@
+import pickle
+
 def carica_dati():
     try:
         
@@ -23,6 +25,11 @@ def carica_dizionario(n, m):
     for i in range(0,len(n)):
         d[n[i]] = m[i]
     return d
+
+def salva_dizionario(d):
+    file = open('voti.dat','wb')
+    pickle.dump(d, file)
+    file.close()
  
 
    
