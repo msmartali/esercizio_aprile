@@ -9,8 +9,8 @@ class Persona:
  
  
 class Studente(Persona):
-    def __init__(self, nome, indirizzo, eta, corso):
-        Persona.__init__(self, nome, indirizzo, eta)
+    def __init__(self, nome, cognome, eta, corso):
+        Persona.__init__(self, nome, cognome, eta)
         self.__corso = corso
  
     def __str__(self):
@@ -18,12 +18,17 @@ class Studente(Persona):
  
  
 class Lavoratore(Persona):
-    def __init__(self, nome, indirizzo, eta, professione):
-        Persona.__init__(self, nome, indirizzo, eta)
+    def __init__(self, nome, cognome, eta, professione):
+        Persona.__init__(self, nome, cognome, eta)
         self.__professione = professione
  
     def __str__(self):
         return Persona.__str__(self)+", e sei {self.__professione}"
 
-persone= Persona('Marta', 'Lilla', 31),
-print (persone)
+def __main__ ():
+    persone= Persona("Marta", "Lilla", 31)
+    studenti= Studente("Luca", "Ravenna", 34, "giurisprudenza")
+    lavoratori= Lavoratore("Edoardo", "Ferrario", 35, "comico")
+    print(persone, studenti, lavoratori)
+
+print (__main__)
